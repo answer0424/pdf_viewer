@@ -1,9 +1,15 @@
-name: Deploy pdf viewer Application
+name: Deploy (GitHub Pages)
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]   # 레포가 master면 "master"로 변경
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -16,13 +22,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci
 
+      # CRA가 GitHub Pages 하위 경로(/repo/)에서 동작하려면 PUBLIC_URL 필요
       - name: Build
         run: npm run build
+        env:
+          PUBLIC_URL: /${{ github.event.repository.name }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
