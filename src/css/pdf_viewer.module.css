@@ -1,0 +1,234 @@
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0b0c10;
+    color: #eaeaea;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.header {
+    height: 56px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0f1117;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.fileName {
+    opacity: 0.8;
+    font-size: 13px;
+    max-width: 520px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main {
+    flex: 1;
+    position: relative;
+    overflow: auto; /* ✅ 컨텐츠 기준 스크롤(빈영역 감소) */
+}
+
+.emptyState {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.emptyTitle {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.emptyDesc {
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.viewerShell {
+    display: flex;
+    flex-direction: column;
+    /* height: 100% 제거: 컨텐츠 높이만큼만 */
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0f1117;
+    flex-wrap: wrap;
+}
+
+.controlsGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pageIndicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.pageInput {
+    width: 54px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #eaeaea;
+    padding: 4px 6px;
+    outline: none;
+    text-align: center;
+}
+
+.pageSlash {
+    opacity: 0.7;
+}
+
+.pageTotal {
+    opacity: 0.9;
+    min-width: 18px;
+    text-align: center;
+}
+
+.zoomLabel {
+    width: 60px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.9;
+}
+
+/* ✅ 빈 영역 줄이기: canvasArea에서 flex 제거 */
+.canvasArea {
+    overflow: visible; /* main이 스크롤 담당 */
+    padding: 18px;
+    background: #0b0c10;
+}
+
+.docWrap {
+    width: fit-content;
+    margin: 0 auto;
+    background: #11131a;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.btn {
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: #eaeaea;
+    padding: 8px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.primaryBtn {
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.loading {
+    padding: 18px;
+    opacity: 0.85;
+}
+
+.error {
+    margin-top: 10px;
+    color: #ffb4b4;
+    opacity: 0.95;
+    font-size: 13px;
+}
+
+.errorBanner {
+    margin: 0 auto 12px;
+    max-width: 860px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 180, 180, 0.35);
+    background: rgba(255, 180, 180, 0.08);
+    color: #ffd1d1;
+}
+
+.formArea {
+    padding: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0f1117;
+}
+
+.formTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.label {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.input {
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: #eaeaea;
+    padding: 0 12px;
+    outline: none;
+}
+
+.hint {
+    font-size: 12px;
+    opacity: 0.7;
+}
